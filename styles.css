@@ -1,3 +1,43 @@
 html{
     background: lavenderblush;
 }
+.calculator{
+    margin: 30%;
+
+}
+.calcSpace{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 2fr);
+    grid-template-rows: repeat(5, 2fr);
+    column-gap: 5px;
+    row-gap: 5px;
+    background: rgb(84, 13, 110);
+    border: solid black 1PX;
+    border-radius: 2%;
+    
+    color: rgb(red, green, blue);
+
+
+}
+
+.number{
+background: rgb(121, 30, 148);
+border: solid black 1px;
+border-radius: 10%;
+color: rgb(255, 67, 101);
+padding: 1%;
+margin: 0%;
+}
+
+.operator{
+background: rgb(45, 226, 230);
+border: solid black 1px;
+border-radius: 50%;
+color: rgb(255, 67, 101);
+}
+
+#screen{
+background-color:  gray;
+border: solid black 1px;
+}
