@@ -34,3 +34,11 @@ number.addEventListener('click', function(e) {
     console.log(e.toElement.innerText);
 });
 });
+
+function clearScreen(){
+const screen = document.querySelector('#screen');
+screen.textContent = '0';
+};
+
+const clear = document.querySelector('#clear')
+clear.addEventListener('click', clearScreen);
