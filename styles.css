@@ -97,7 +97,7 @@ font-size: 25px;
 }
 
 #screen{
-background-color:  gray;
+background-color: rgb(180, 180, 180);
 border: solid rgb(249, 200, 14) 5px;
 color: rgb(255, 67, 101);
 font-size: 50px;
