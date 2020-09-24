@@ -26,9 +26,7 @@ function addToScreen(inNumber){
 };
 
 const btn = document.querySelectorAll('.number');
-// btn.forEach((number) =>{
-// number.addEventListener('click', addToScreen);
-// });
+
 btn.forEach((number) =>{
 number.addEventListener('click', function(e) {
     addToScreen(e.toElement.innerText);
@@ -52,8 +50,7 @@ function storeScreenValue(){
 };
 
 const operates = document.querySelectorAll('.operator')
-operates.forEach((op) => {
-    op.addEventListener('click', storeScreenValue);
-    console.log("operate "+ storeScreenValue());
-    
-});
+operates.forEach(op => op.addEventListener('click', storeScreenValue)
+);
+operates.forEach(op => op.addEventListener('click', clearScreen)
+);
