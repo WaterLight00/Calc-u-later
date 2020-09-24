@@ -43,3 +43,17 @@ screen.textContent = '0';
 
 const clear = document.querySelector('#clear')
 clear.addEventListener('click', clearScreen);
+
+function storeScreenValue(){
+    const display = document.querySelector('#screen');
+    let a = display.textContent;
+    return a;
+    
+};
+
+const operates = document.querySelectorAll('.operator')
+operates.forEach((op) => {
+    op.addEventListener('click', storeScreenValue);
+    console.log("operate "+ storeScreenValue());
+    
+});
