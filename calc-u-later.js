@@ -21,6 +21,7 @@ function operate (a, b, operator) {
 
 function addToScreen(inNumber){
     const screen = document.querySelector('#screen');
+    screen.textContent == "0"? screen.textContent = inNumber: 
     screen.textContent += inNumber;
 };
 
