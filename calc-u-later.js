@@ -16,7 +16,8 @@ function divide(a, b) {
 };
 
 function operate (a, b, operator) {
-    return operator(a, b);
+   
+    return operator (a, b);
 };
 
 function addToScreen(inNumber){
@@ -30,7 +31,7 @@ const btn = document.querySelectorAll('.number');
 btn.forEach((number) =>{
 number.addEventListener('click', function(e) {
     addToScreen(e.target.innerText);
-    console.log(e.target.innerText);
+    //console.log(e.target.innerText);
 });
 });
 
@@ -45,25 +46,45 @@ clear.addEventListener('click', clearScreen);
 function storeScreenValue(){
     const display = document.querySelector('#screen');
     let a = display.textContent;
+    //console.log(a);
     return a;
     
 };
 
 const operates = document.querySelectorAll('.operator')
-// operates.forEach(op => op.addEventListener('click', storeScreenValue)
-// );
-// operates.forEach(op => op.addEventListener('click', clearScreen)
-// );
+
+function thatName (e){
+    let operatorName = e.target.id;
+    //console.log(operatorName);
+    return operatorName;
+};
+
+
+let firstValue = '';
+
+let operationName = '';
 
 operates.forEach((op) =>{
 op.addEventListener('click', function(e) {
-    storeScreenValue();
+    firstValue = storeScreenValue();
     clearScreen();
-    let operatorName = e.target.id;
-    console.log(operatorName);
+    operationName = thatName(e);
+
+    // if(thatName(e)  != "equals"){
+    //     console.log(operate(storeScreenValue, storeScreenValue, thatName(e)))
+    // };
+    // let operatorName = e.target.id;
+    // return operatorName;
+})
+});
+
+const eq = document.querySelector('#equals');
+eq.addEventListener('click', function(e){
+    console.log(operate(firstValue, storeScreenValue, operationName));
+
 })
 
-});
+
 
 // the next fucntion should take the first display value(a), 
 //side-I should log what operator button was pressed, save and return that string
