@@ -29,8 +29,8 @@ const btn = document.querySelectorAll('.number');
 
 btn.forEach((number) =>{
 number.addEventListener('click', function(e) {
-    addToScreen(e.toElement.innerText);
-    console.log(e.toElement.innerText);
+    addToScreen(e.target.innerText);
+    console.log(e.target.innerText);
 });
 });
 
@@ -50,7 +50,24 @@ function storeScreenValue(){
 };
 
 const operates = document.querySelectorAll('.operator')
-operates.forEach(op => op.addEventListener('click', storeScreenValue)
-);
-operates.forEach(op => op.addEventListener('click', clearScreen)
-);
+// operates.forEach(op => op.addEventListener('click', storeScreenValue)
+// );
+// operates.forEach(op => op.addEventListener('click', clearScreen)
+// );
+
+operates.forEach((op) =>{
+op.addEventListener('click', function(e) {
+    storeScreenValue();
+    clearScreen();
+    let operatorName = e.target.id;
+    console.log(operatorName);
+})
+
+});
+
+// the next fucntion should take the first display value(a), 
+//side-I should log what operator button was pressed, save and return that string
+//give each a unique id
+//because everytimes an operator is pressed the screen clears to get 
+//the second number(b) for the operation, i should look at the current string vaule of the display
+//when "=" is pressed (b) is the curretnt display value
