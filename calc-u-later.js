@@ -1,24 +1,42 @@
-function add(a, b) {
-    return a + b;
-};
-
-function subtract(a, b){
-    return a - b;
-};
-
-function multiply(a, b) {
-    return a * b;
-    
-};
-
-function divide(a, b) {
-    return a / b;
-};
-
 function operate (a, b, operator) {
-   
-    return operator (a, b);
+    switch (operator) {
+        case "add":
+            result = a + b;
+            break;
+            case "subtract":
+                result = a - b;
+                break;
+                case "multiply":
+                    result = a * b;
+                    break;
+                    case "divide":
+                        result = a / b;
+                        break;
+                        
+                        default:
+                            break;
+                        }
+
+                        return result;
 };
+
+// function add(a, b) {
+//     return a + b;
+// };
+
+// function subtract(a, b){
+//     return a - b;
+// };
+
+// function multiply(a, b) {
+//     return a * b;
+    
+// };
+
+// function divide(a, b) {
+//     return a / b;
+// };
+
 
 function addToScreen(inNumber){
     const screen = document.querySelector('#screen');
@@ -45,9 +63,9 @@ clear.addEventListener('click', clearScreen);
 
 function storeScreenValue(){
     const display = document.querySelector('#screen');
-    let a = display.textContent;
+    //let a = display.textContent;
     //console.log(a);
-    return a;
+    return display.textContent;
     
 };
 
@@ -80,8 +98,13 @@ op.addEventListener('click', function(e) {
 
 const eq = document.querySelector('#equals');
 eq.addEventListener('click', function(e){
-    console.log(operate(firstValue, storeScreenValue, operationName));
-
+    let currentvalue = storeScreenValue();
+    firstValue = parseInt(firstValue);
+    currentvalue = parseInt(currentvalue);
+    clearScreen();
+    addToScreen(operate(firstValue, currentvalue, operationName));
+    console.log(operate(firstValue, currentvalue, operationName));
+    
 })
 
 
