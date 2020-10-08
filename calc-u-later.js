@@ -68,7 +68,7 @@ let operationName = '';
 operates.forEach((op) =>{
 op.addEventListener('click', function(e) {
     firstValue = storeScreenValue();
-    clearScreen();
+    //clearScreen();
     operationName = thatName(e);
 
 })
@@ -83,6 +83,9 @@ eq.addEventListener('click', function(e){
     addToScreen(operate(firstValue, currentvalue, operationName));
     firstValue = 0;
     console.log(firstValue);
-    console.log(operate(firstValue, currentvalue, operationName));
-    
+
 })
+ // if a number is pressed after an operator has been selected clear the screen
+ // and display the current number beign entered.
+ //if a number is not pressed after the operator keep the current number on screedn 
+ // if a number is enter and an operator pressed twice the current and first number is the same and the operation of the two is displayed
